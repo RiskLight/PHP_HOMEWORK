@@ -14,7 +14,7 @@
 <body style="margin: 50px; text-align: left">
 
 <?php
-echo "<p style='font-weight: bold'> Задаие 1: выведите  10 раз фразу You are welcome!</p>";
+echo "<p style='font-weight: bold'> Задание 1: выведите  10 раз фразу You are welcome!</p>";
 
 $j = 1;
 while ($j <= 10) {
@@ -26,16 +26,17 @@ echo "<p style='font-weight: bold'> Задание 2: найти сумму  1+4
 
 
 $sum = 0;
-for($i=1;$i<=112;$i+=3){
-    $sum = $sum + $i;
-    echo "Сумма = $sum, <br/>";
+for ($i = 1; $i <= 112; $i += 3) {
+    $sum += $i;
 }
+
+echo "Сумма = $sum, <br/>";
 
 echo "<p style='font-weight: bold'> Задане 3: вывести все числа, меньшие 10000, у которых есть хотя бы одна цифра 3 и которые не делятся на 5.<br>
                                     Тут должно быть десять тысяч, но пиздец это много текста, поэтому меняю на 100</p>";
 
 //Тут должно быть десять тысяч, но пиздец это много текста, поэтому меняю на 100
-for($i = 0;$i < 100; $i++) {
+for ($i = 0; $i < 100; $i++) {
     if (str_contains($i, 3) && $i % 5 !== 0) {
         echo "$i, <br/>";
     }
@@ -51,7 +52,7 @@ while (true) {
     $rand = rand(1, 100);
     if (!in_array($rand, $randArray)) {
         $randArray[] = $rand;
-        if (sizeof($randArray) === 3) {
+        if (count($randArray) === 3) {
             break;
         }
     }
@@ -72,11 +73,11 @@ echo "<p style='font-weight: bold'> Задание 5: вывести на экр
 $min = 111111;
 $max = 112111;
 $count = 0; //Количество выиграшных билетов
-for ($i = $min; $i <= $max; $i++){
-    $s = (string)$i;
-    $s1 = $s[0] + $s[1] + $s[2];
-    $s2 = $s[3] + $s[4] + $s[5];
-    if ($s1 === $s2) {
+for ($i = $min; $i <= $max; $i++) {
+    $halfStr = (string)$i;
+    $halfStrOne = $halfStr[0] + $halfStr[1] + $halfStr[2];
+    $halfStrTwo = $halfStr[3] + $halfStr[4] + $halfStr[5];
+    if ($halfStrOne === $halfStrTwo) {
         echo "$i <br/>"; //Вывод выиграшных билетов
         $count++;
     }
@@ -94,7 +95,7 @@ print_r(array_count_values($array));
 
 echo "<p style='font-weight: bold'> Задание 7: Поменять местами наибольший и наименьший элементы массива.</p>";
 
-//$arrayTwo = [-11,12,3,4,5,27,7,-8,99,4];
+//$arrayTwo = [-11, 12, 3, 4, 5, 27, 7, -8, 99, 4];
 //$min_i = $max_i = 0; // индексы максимального и минимального элемента
 //foreach($arrayTwo as $key=>$value) {
 //    $min_i =  $value < $arrayTwo[$min_i] ? $key : $min_i;
@@ -104,7 +105,7 @@ echo "<p style='font-weight: bold'> Задание 7: Поменять мест�
 //
 //print_r($arrayTwo);
 
-$arrayThree = [-11,12,3,4,5,27,7,-8,99,4];
+$arrayThree = [-11, 12, 3, 4, 5, 27, 7, -8, 99, 4];
 
 foreach ($arrayThree as $row) {
     echo $row . " ";
@@ -116,7 +117,7 @@ $max_val = max($arrayThree);
 $min_val = min($arrayThree);
 $max_key = array_search($max_val, $arrayThree);
 $min_key = array_search($min_val, $arrayThree);
-list($arrayThree[$min_key], $arrayThree[$max_key]) = [$arrayThree[$max_key],$arrayThree[$min_key]];
+[$arrayThree[$min_key], $arrayThree[$max_key]] = [$arrayThree[$max_key], $arrayThree[$min_key]];
 //print_r($arrayThree);
 foreach ($arrayThree as $row) {
     echo $row . " ";
@@ -127,7 +128,7 @@ echo "<br/>";
 echo "<p style='font-weight: bold'> Задание 8: удалите в массиве повторы значений. Например, для массива 1 2 4 4 2 5 результатом будет 1 2 4 5</p>";
 
 
-$arrayFour = [1, 2, 4, 4, 2, 5,];
+$arrayFour = [1, 2, 4, 4, 2, 5];
 
 print_r(array_unique($arrayFour));
 
@@ -151,21 +152,21 @@ echo "<p style='font-weight: bold'> Задание 10: Создайте двух
 
 
 $arrRuEn = [
-    'ru'=>[ 1 => 'Понедельник',
-            2 => 'Вторник',
-            3 => 'Среда',
-            4 => 'Четверг',
-            5 => 'Пятница',
-            6 => 'Суббота',
-            7 => 'Воскресенье'],
+    'ru' => [1 => 'Понедельник',
+        2 => 'Вторник',
+        3 => 'Среда',
+        4 => 'Четверг',
+        5 => 'Пятница',
+        6 => 'Суббота',
+        7 => 'Воскресенье'],
 
-    'en'=>[ 1 => 'Monday',
-            2 => 'Tuesday',
-            3 => 'Wednesday',
-            4 => 'Thursday',
-            5 => 'Friday',
-            6 => 'Saturday',
-            7 => 'Sunday'],
+    'en' => [1 => 'Monday',
+        2 => 'Tuesday',
+        3 => 'Wednesday',
+        4 => 'Thursday',
+        5 => 'Friday',
+        6 => 'Saturday',
+        7 => 'Sunday'],
 ];
 
 echo $arrRuEn['ru']['1'], "<br/>";
@@ -196,21 +197,26 @@ echo "<p style='font-weight: bold'> Задание 12: Дан массив с ч
 
 $arrayNeo = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-$i=0;
+$i = 0;
 
-foreach($arrayNeo as $elem )
-{
-    if($elem % 3 == 0)
-    {
+foreach ($arrayNeo as $elem) {
+    if ($elem % 3 === 0) {
         $i = $elem . "<br/>";
-    }
-    else
-    {
+    } else {
         $i = $elem . ', ';
     }
 
     echo $i;
 }
+
+//foreach ($arrayNeo as  $key => $elem) {
+//    if ($key === 2 || $key === 5 || $key === 8) {
+//        $i = $elem . "<br/>";
+//    } else {
+//        $i = $elem . ", ";
+//    }
+//    echo $i;
+//}
 
 echo "<p style = 'font-weight: bold'>Задание 13: cоздать массив из 10 чисел и создать переменную с номером элемента;<br/>
                                      сделать алгоритм, который меняет нулевой и заданный в переменной элемент массива, например:<br/>
@@ -229,7 +235,7 @@ foreach ($arrayTen as $row) {
 echo "<br/>";
 
 if (array_key_exists($indexShown, $arrayTen)) {
-    list($arrayTen[0], $arrayTen[$indexShown]) = [$arrayTen[$indexShown], $arrayTen[0]];
+    [$arrayTen[0], $arrayTen[$indexShown]] = [$arrayTen[$indexShown], $arrayTen[0]];
     foreach ($arrayTen as $row) {
         echo $row . " ";
     }
