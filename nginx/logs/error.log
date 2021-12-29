@@ -693,3 +693,6 @@
 2021/12/29 13:19:13 [notice] 1#1: start worker process 34
 2021/12/29 13:19:13 [notice] 1#1: start worker process 35
 2021/12/29 13:19:13 [notice] 1#1: start worker process 36
+2021/12/29 13:24:05 [error] 33#33: *2 directory index of "/var/www/src/public/uploads/" is forbidden, client: 172.19.0.1, server: example.palmo, request: "GET /uploads/ HTTP/1.1", host: "example.palmo", referrer: "http://example.palmo/goods.php"
+2021/12/29 13:24:16 [error] 33#33: *2 directory index of "/var/www/src/public/uploads/" is forbidden, client: 172.19.0.1, server: example.palmo, request: "GET /uploads/ HTTP/1.1", host: "example.palmo", referrer: "http://example.palmo/goods.php"
+2021/12/29 13:24:19 [error] 33#33: *2 directory index of "/var/www/src/public/uploads/" is forbidden, client: 172.19.0.1, server: example.palmo, request: "GET /uploads/ HTTP/1.1", host: "example.palmo", referrer: "http://example.palmo/goods.php"
