@@ -91,7 +91,7 @@
 <body>
 <div class="form">
     <p>Задание 1. Спросите город пользователя с помощью формы. Выведите на экран фразу 'Ваш город: "Город"</p>
-    <form action="index.php" method="GET">
+    <form action="index.php" method="POST">
         <label>Введи город сцуко <input type="text" name="city"></label>
         <input type="submit">
     </form>

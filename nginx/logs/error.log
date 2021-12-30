@@ -696,3 +696,22 @@
 2021/12/29 13:24:05 [error] 33#33: *2 directory index of "/var/www/src/public/uploads/" is forbidden, client: 172.19.0.1, server: example.palmo, request: "GET /uploads/ HTTP/1.1", host: "example.palmo", referrer: "http://example.palmo/goods.php"
 2021/12/29 13:24:16 [error] 33#33: *2 directory index of "/var/www/src/public/uploads/" is forbidden, client: 172.19.0.1, server: example.palmo, request: "GET /uploads/ HTTP/1.1", host: "example.palmo", referrer: "http://example.palmo/goods.php"
 2021/12/29 13:24:19 [error] 33#33: *2 directory index of "/var/www/src/public/uploads/" is forbidden, client: 172.19.0.1, server: example.palmo, request: "GET /uploads/ HTTP/1.1", host: "example.palmo", referrer: "http://example.palmo/goods.php"
+2021/12/29 13:26:49 [error] 33#33: *2 directory index of "/var/www/src/public/uploads/" is forbidden, client: 172.19.0.1, server: example.palmo, request: "GET /uploads/ HTTP/1.1", host: "example.palmo", referrer: "http://example.palmo/goods.php"
+2021/12/29 13:27:28 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2021/12/29 13:27:28 [notice] 34#34: gracefully shutting down
+2021/12/29 13:27:28 [notice] 35#35: gracefully shutting down
+2021/12/29 13:27:28 [notice] 34#34: exiting
+2021/12/29 13:27:28 [notice] 35#35: exiting
+2021/12/29 13:27:28 [notice] 35#35: exit
+2021/12/29 13:27:28 [notice] 34#34: exit
+2021/12/29 13:27:28 [notice] 36#36: gracefully shutting down
+2021/12/29 13:27:28 [notice] 36#36: exiting
+2021/12/29 13:27:28 [notice] 33#33: gracefully shutting down
+2021/12/29 13:27:28 [notice] 36#36: exit
+2021/12/29 13:27:28 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2021/12/29 13:27:28 [notice] 1#1: worker process 35 exited with code 0
+2021/12/29 13:27:28 [notice] 1#1: worker process 36 exited with code 0
+2021/12/29 13:27:28 [notice] 1#1: signal 29 (SIGIO) received
+2021/12/29 13:27:28 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2021/12/29 13:27:28 [notice] 1#1: worker process 34 exited with code 0
+2021/12/29 13:27:28 [notice] 1#1: signal 29 (SIGIO) received
