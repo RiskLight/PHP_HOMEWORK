@@ -1,4 +1,49 @@
 <?php
+
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<a href="addnews.php">Добавить новость</a>
+<a href="listnews.php">Читать новости</a>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+//require 'vendor/autoload.php';
 //namespace work;
 //include("blog/Page.php");
 //include("news/Page.php");
@@ -118,49 +163,49 @@
 //
 
 
-interface ArrayCrudInterface {
-    public function create();
-    public function read($index);
-    public function update();
-    public function delete($index);
-
-}
-
-
-class ArrayCrud implements ArrayCrudInterface {
-    protected array $arr = [];
-
-    public function create()
-    {
-        // TODO: Implement create() method.
-        for ($i=0; $i<=9; $i++) {
-            $this->arr[$i] = random_int(0,100);
-        }
-    }
-
-    public function update()
-    {
-        // TODO: Implement update() method.
-        $this->arr[] = random_int(0, 100);
-    }
-
-    public function read($index)
-    {
-        // TODO: Implement read() method.
-        return $this->arr[$index];
-    }
-
-    public function delete($index)
-    {
-        // TODO: Implement delete() method.
-        unset($this->arr[$index]);
-    }
-}
-
-$ku = new ArrayCrud();
-$ku->create();
-$ku->update();
-print_r($ku);
+//interface ArrayCrudInterface {
+//    public function create();
+//    public function read($index);
+//    public function update();
+//    public function delete($index);
+//
+//}
+//
+//
+//class ArrayCrud implements ArrayCrudInterface {
+//    protected array $arr = [];
+//
+//    public function create()
+//    {
+//        // TODO: Implement create() method.
+//        for ($i=0; $i<=9; $i++) {
+//            $this->arr[$i] = random_int(0,100);
+//        }
+//    }
+//
+//    public function update()
+//    {
+//        // TODO: Implement update() method.
+//        $this->arr[] = random_int(0, 100);
+//    }
+//
+//    public function read($index)
+//    {
+//        // TODO: Implement read() method.
+//        return $this->arr[$index];
+//    }
+//
+//    public function delete($index)
+//    {
+//        // TODO: Implement delete() method.
+//        unset($this->arr[$index]);
+//    }
+//}
+//
+//$ku = new ArrayCrud();
+//$ku->create();
+//$ku->update();
+//print_r($ku);
 
 
 
