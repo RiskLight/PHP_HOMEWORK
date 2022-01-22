@@ -13,8 +13,6 @@ if (isset($_POST['send'])) {
     $author = $_POST['author'];
     $date = $_POST['date'];
 
-//    move_uploaded_file($current_path, $new_path);
-
     $errors = [];
 
     if ($title === '') {
@@ -45,7 +43,7 @@ if (isset($_POST['send'])) {
         $date = date('l jS \of F Y h:i:s A');
     }
 
-    if (isset($_FILES['text']['name'])) {
+    if (file_exists($_FILES['text']['name'])) {
         move_uploaded_file($current_path, $new_path);
     } else {
         $errors[] = 'Добавьте фото';
@@ -53,14 +51,43 @@ if (isset($_POST['send'])) {
 
 
     if (empty($errors)) {
-        setcookie('name', $title, time() + 3600);
-        setcookie('short', $short, time() + 3600);
-        setcookie('textNews', $textNews, time() + 3600);
-        setcookie('author', $author, time() + 3600);
-        setcookie('date', $date, time() + 3600);
-        setcookie('text', $filename, time() + 3600);
-
-        echo 'Вы добавили новость';
+        if (isset($_COOKIE['filtername'])) {
+            $var = json_decode($_COOKIE['filtername']);
+            $var[] = [
+                    "id"=>count($var)+1,
+                "name"=>$title,
+                "short"=>$short,
+                "textNews"=>$textNews,
+                "author"=>$author,
+                "date"=>$date,
+                "text"=>$filename
+            ];
+            $var = json_encode($var);
+            setcookie('filtername', $var);
+        } else {
+            $array = [
+                [   "id"=>1,
+                    "name"=>$title,
+                    "short"=>$short,
+                    "textNews"=>$textNews,
+                    "author"=>$author,
+                    "date"=>$date,
+                    "text"=>$filename
+                ]
+            ];
+            $json = json_encode($array);
+            setcookie("filtername", $json, time()+3600);
+        }
+        $array = [
+            [
+                "name"=>$title,
+                "short"=>$short,
+                "textNews"=>$textNews,
+                "author"=>$author,
+                "date"=>$date,
+                "text"=>$filename
+            ]
+        ];
     } else {
         pushErrors($errors);
     }
