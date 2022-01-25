@@ -1,3 +1,2 @@
 .idea
-nginx
-docker-compose.yml
+nginx/
